@@ -1,10 +1,8 @@
 <?php
-    session_start();
     $temp= $_SESSION['user_username'];
     ini_set("display_errors",1);
     if(isset($_POST)){
         require '../_database/database.php';
-        session_start();
         $Destination = '../userfiles/avatars';
         if(!isset($_FILES['ImageFile']) || !is_uploaded_file($_FILES['ImageFile']['tmp_name'])){
             $NewImageName= 'default.jpg';

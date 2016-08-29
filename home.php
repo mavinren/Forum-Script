@@ -1,7 +1,6 @@
 <?php include 'components/authentication.php' ?>     
 <?php include 'controllers/base/head.php' ?>
 <?php
-    session_start();
     require '_database/database.php';
     if($_SESSION['user_username']){
 ?>
@@ -16,7 +15,6 @@
 ?>
         <h1 class="text-center">Latest Notices</h1>
 <?php 
-    session_start();
     $current_user = $_SESSION['user_username'];
     $sql = "SELECT * FROM notice_topic ORDER BY notice_topic_time DESC";
     $result = mysqli_query($database,$sql);
@@ -52,7 +50,6 @@
 ?>
         <h1 class="text-center">Latest Forum Topics</h1>
 <?php 
-    session_start();
     $current_user = $_SESSION['user_username'];
     $sql = "SELECT * FROM forum_topic ORDER BY forum_topic_time DESC";
     $result = mysqli_query($database,$sql);
